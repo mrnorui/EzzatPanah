@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_pink"
+    tools:context=".MainActivity">
+    <!--App name-->
+    <TextView
+        android:id="@+id/mainAppNameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="t.ride"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--Container-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_top_rounded_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainAppNameTxt">
+        <!--Guide left-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mainGuideStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="50dp" />
+        <!--Guide right-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mainGuideEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="50dp" />
+        <!--Title-->
+        <TextView
+            android:id="@+id/mainTitleTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/basic"
+            android:text="Create an account"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/mainGuideEnd"
+            app:layout_constraintStart_toStartOf="@id/mainGuideStart"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--Email-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mainEmailInp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:hint="Email address"
+            app:boxBackgroundColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/mainGuideEnd"
+            app:layout_constraintStart_toStartOf="@id/mainGuideStart"
+            app:layout_constraintTop_toBottomOf="@id/mainTitleTxt">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/mainEmailEdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_round_mail_24"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--Password-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mainPasswordInp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:hint="Password"
+            app:boxBackgroundColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/mainGuideEnd"
+            app:layout_constraintStart_toStartOf="@id/mainGuideStart"
+            app:layout_constraintTop_toBottomOf="@id/mainEmailInp"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/mainPasswordEdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--Terms check-->
+        <CheckBox
+            android:id="@+id/mainTermsCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="I agree to the terms + conditions"
+            app:buttonTint="@color/infraRed"
+            app:layout_constraintStart_toStartOf="@id/mainGuideStart"
+            app:layout_constraintTop_toBottomOf="@id/mainPasswordInp" />
+        <!--Submit btn-->
+        <TextView
+            android:id="@+id/mainSubmitBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_rounded_gradient_red"
+            android:drawablePadding="10dp"
+            android:paddingStart="30dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="20dp"
+            android:text="Create account"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:drawableEndCompat="@drawable/ic_round_keyboard_arrow_right_24"
+            app:drawableTint="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/mainGuideEnd"
+            app:layout_constraintTop_toBottomOf="@id/mainTermsCheck" />
+        <!--Already account-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:text="Already have an account? Sign in"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/mainGuideEnd"
+            app:layout_constraintStart_toStartOf="@id/mainGuideStart" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
